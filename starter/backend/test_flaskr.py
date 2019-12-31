@@ -18,7 +18,7 @@ class TriviaTestCase(unittest.TestCase):
         self.database_path = "postgres://{}/{}".format('localhost:5432', self.database_name)
         setup_db(self.app, self.database_path)
 
-        self.new_question ={
+        self.new_question = {
             'question': 'Test_Q',
             'answer': 'Test_A',
             'category': 3,
@@ -165,7 +165,6 @@ class TriviaTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
         self.assertTrue(data['question'])
-
 
 
 # Make the tests conveniently executable
